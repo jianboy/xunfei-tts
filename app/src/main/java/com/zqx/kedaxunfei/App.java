@@ -9,11 +9,10 @@ import com.iflytek.cloud.SpeechUtility;
  */
 public class App extends Application {
 
-    private static final String APPID = "appid=586d1a59";
+    private static final String Param = "appid=586d1a59";
     @Override
     public void onCreate() {
         super.onCreate();
-        SpeechUtility.createUtility(this, APPID);
-
+        SpeechUtility.createUtility(this, Param);
     }
 }
