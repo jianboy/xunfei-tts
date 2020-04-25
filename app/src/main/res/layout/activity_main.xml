@@ -27,7 +27,6 @@
             android:background="@drawable/shape_bg"
             android:gravity="top"
             android:hint="@string/please_input"
-            android:inputType="text"
             android:minLines="8"
             android:autofillHints=""
             android:padding="5dp"
