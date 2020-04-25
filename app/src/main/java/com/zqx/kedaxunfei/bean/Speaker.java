@@ -12,11 +12,11 @@ import java.util.List;
 
 public enum Speaker {
 
+    xiaowanzi(R.mipmap.xiaowanzi, "小丸子 卡通人物", "xiaowanzi"),
     xiaoyan(R.mipmap.xiaoyan, "小燕 青年女声", "xiaoyan"),
     laosun(R.mipmap.laosun, "老孙 中年男声", "vils"),
     tanglaoya(R.mipmap.tanglaoya, "唐老鸭 卡通人物", "aisduck"),
     xiaoxin(R.mipmap.xiaoxin, "小新 卡通人物", "xiaoxin"),
-    xiaowanzi(R.mipmap.xiaowanzi, "小丸子 卡通人物", "xiaowanzi"),
     xiaomei(R.mipmap.xiaomei, "粤语 小梅 青年女声", "xiaomei"),
     dengziqi(R.mipmap.dengziqi, "台普 小玲 青年女声", "aisxlin"),
     xiaoqian(R.mipmap.xiaoqian, "东北 小倩 青年女声", "xiaoqian"),
@@ -39,11 +39,11 @@ public enum Speaker {
     public static List<Speaker> getAllSpeakers() {
         return new ArrayList<>(
                 Arrays.asList(
+                        xiaowanzi,
                         xiaoyan,
                         laosun,
                         tanglaoya,
                         xiaoxin,
-                        xiaowanzi,
                         xiaomei,
                         dengziqi,
                         xiaoqian,

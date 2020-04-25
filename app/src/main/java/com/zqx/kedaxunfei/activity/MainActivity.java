@@ -1,7 +1,12 @@
 package com.zqx.kedaxunfei.activity;
 
+import android.Manifest;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,9 +15,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
+import com.iflytek.cloud.SynthesizerListener;
 import com.zqx.kedaxunfei.R;
 import com.zqx.kedaxunfei.adapter.SpeakerAdapter;
 import com.zqx.kedaxunfei.bean.Speaker;
@@ -21,6 +29,7 @@ import com.zqx.kedaxunfei.utils.SpUtil;
 import com.zqx.kedaxunfei.view.BottomDialog;
 
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
     private List<Speaker> mSpeakers ;
     private Speaker mLastSpk;
 
+    String text;
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mSpeakers = Speaker.getAllSpeakers();//得到发音人模型的集合
         initLast();//初始化上一次退出时的EditText内容和上次选择的发音人数据
         initDialogLv();//初始化发音人选择对话框
-
+        mContext=this;
     }
 
     private void initLast() {
@@ -73,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
         mTts.setParameter(SpeechConstant.SPEED, "50");//设置语速
         mTts.setParameter(SpeechConstant.VOLUME, "80");//设置音量，范围0~100
         mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD); //设置云端
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
     }
 
     private void setSpeed(int num) {
@@ -107,10 +125,53 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSpeakClick(View view) {
-        String text = mEt.getText().toString().trim();
+        text = mEt.getText().toString().trim();
         int progress = mSeekBar.getProgress();
         setSpeed(progress);
-        mTts.startSpeaking(text, null);
+        mTts.setParameter(SpeechConstant.AUDIO_FORMAT, "wav");
+        mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH,Environment.getExternalStorageDirectory()+"/tts/"+text.substring(0, 5)+ new Random().nextInt(100) +".wav");
+        mTts.startSpeaking(text, new MySynthesizerListener());
+    }
+    class MySynthesizerListener implements SynthesizerListener {
+
+        @Override
+        public void onSpeakBegin() {
+
+        }
+
+        @Override
+        public void onBufferProgress(int percent, int beginPos, int endPos ,
+                                     String info) {
+            // 合成进度 完成发送数据到 pc
+            if(percent==100){
+                Toast.makeText(mContext, "合成完成!", Toast.LENGTH_LONG).show();
+            }
+        }
+
+        @Override
+        public void onSpeakPaused() {
+
+        }
+
+        @Override
+        public void onSpeakResumed() {
+
+        }
+
+        @Override
+        public void onSpeakProgress(int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onCompleted(SpeechError speechError) {
+
+        }
+
+        @Override
+        public void onEvent(int i, int i1, int i2, Bundle bundle) {
+
+        }
     }
 
     public void onSpkerSwitchClick(View view) {

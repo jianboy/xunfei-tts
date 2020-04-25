@@ -27,9 +27,10 @@
             android:background="@drawable/shape_bg"
             android:gravity="top"
             android:hint="@string/please_input"
-            android:minLines="8"
+            android:lines="8"
             android:autofillHints=""
             android:padding="5dp"
+            android:inputType="textMultiLine"
             android:textSize="20sp" />
 
         <android.support.v7.widget.CardView
