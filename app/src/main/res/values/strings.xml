@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">讯飞语音</string>
+    <string name="remark_about">语音技术由科大讯飞提供</string>
+    <string name="remark_name">App由章启翔开发</string>
+    <string name="voice_xiaoyan">小燕 青年女声</string>
+    <string name="choose_role">选择发音人</string>
+    <string name="please_input">请输入文字</string>
+    <string name="speed">语速:</string>
+    <string name="btn_speak">点我说话</string>
+    <string name="xunfei">由科大讯飞提供技术支持</string>
 </resources>

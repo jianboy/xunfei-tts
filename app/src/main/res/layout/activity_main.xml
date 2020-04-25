@@ -17,7 +17,8 @@
         android:paddingBottom="5dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
-        android:paddingTop="12dp">
+        android:paddingTop="12dp"
+        android:focusable="true">
 
         <EditText
             android:id="@+id/et"
@@ -25,8 +26,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_bg"
             android:gravity="top"
-            android:hint="请输入文字"
-            android:lines="8"
+            android:hint="@string/please_input"
+            android:inputType="text"
+            android:minLines="8"
+            android:autofillHints=""
             android:padding="5dp"
             android:textSize="20sp" />
 
@@ -41,7 +44,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/selector_currspker"
-                android:clickable="true"
                 android:gravity="center_vertical"
                 android:onClick="onSpkerSwitchClick"
                 android:orientation="horizontal"
@@ -51,7 +53,8 @@
                     android:id="@+id/iv_curspk_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@mipmap/xiaoyan" />
+                    android:src="@mipmap/xiaoyan"
+                    android:contentDescription="TODO" />
 
                 <TextView
                     android:id="@+id/tv_curspk_desc"
@@ -73,10 +76,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="语速:"
+                android:text="@string/speed"
                 android:textSize="15sp" />
 
             <SeekBar
+                android:focusable="auto"
                 android:progress="50"
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
@@ -90,13 +94,14 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_btn"
             android:onClick="onSpeakClick"
-            android:text="点我说话"
+            android:text="@string/btn_speak"
             android:textColor="#fff"
             android:textSize="18sp" />
 
 
 
         <FrameLayout
+            android:id="@+id/fl_remark"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
@@ -105,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="由科大讯飞提供技术支持"
+            android:text="@string/xunfei"
             android:textSize="13sp" />
     </LinearLayout>
 

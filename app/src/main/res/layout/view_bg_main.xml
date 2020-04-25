@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="5dp"
-        android:text="App由章启翔开发"
+        android:text="@string/remark_name"
         android:textColor="#626668"
         android:textSize="15sp" />
 
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="语音技术由科大讯飞提供"
+        android:text="@string/remark_about"
         android:textColor="#626668"
         android:textSize="15sp" />
 </LinearLayout>

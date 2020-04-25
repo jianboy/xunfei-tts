@@ -10,11 +10,12 @@
         android:id="@+id/iv_speaker_icon"
         android:src= "@mipmap/xiaoyan"
         android:layout_width="40dp"
-        android:layout_height="40dp" />
+        android:layout_height="40dp"
+        android:contentDescription="desc"/>
     <TextView
         android:id="@+id/tv_speaker_desc"
         android:textSize="18sp"
-        android:text="小燕 青年女声"
+        android:text="@string/voice_xiaoyan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
