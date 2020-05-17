@@ -129,7 +129,11 @@ public class MainActivity extends AppCompatActivity {
         int progress = mSeekBar.getProgress();
         setSpeed(progress);
         mTts.setParameter(SpeechConstant.AUDIO_FORMAT, "wav");
-        mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH,Environment.getExternalStorageDirectory()+"/tts/"+text.substring(0, 5)+ new Random().nextInt(100) +".wav");
+        if(text.length()>=5){
+            mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH,Environment.getExternalStorageDirectory()+"/tts/"+text.substring(0, 5).trim()+ new Random().nextInt(1000) +".wav");
+        }else {
+            mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH,Environment.getExternalStorageDirectory()+"/tts/"+text.trim()+ new Random().nextInt(1000) +".wav");
+        }
         mTts.startSpeaking(text, new MySynthesizerListener());
     }
     class MySynthesizerListener implements SynthesizerListener {
