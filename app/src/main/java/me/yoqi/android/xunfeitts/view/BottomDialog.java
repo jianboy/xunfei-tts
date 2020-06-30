@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei.view;
+package me.yoqi.android.xunfeitts.view;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.zqx.kedaxunfei.R;
+import com.yoqi.xunfeitts.R;
 
 /**
  * Created by ZhangQixiang on 2017/1/5.

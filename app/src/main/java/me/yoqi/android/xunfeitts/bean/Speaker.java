@@ -1,6 +1,6 @@
-package com.zqx.kedaxunfei.bean;
+package me.yoqi.android.xunfeitts.bean;
 
-import com.zqx.kedaxunfei.R;
+import com.yoqi.xunfeitts.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

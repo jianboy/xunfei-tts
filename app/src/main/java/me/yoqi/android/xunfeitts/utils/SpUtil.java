@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei.utils;
+package me.yoqi.android.xunfeitts.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

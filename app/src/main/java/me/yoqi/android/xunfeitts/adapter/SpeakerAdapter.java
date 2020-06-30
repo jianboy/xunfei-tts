@@ -1,12 +1,12 @@
-package com.zqx.kedaxunfei.adapter;
+package me.yoqi.android.xunfeitts.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zqx.kedaxunfei.R;
-import com.zqx.kedaxunfei.bean.Speaker;
+import com.yoqi.xunfeitts.R;
+import me.yoqi.android.xunfeitts.bean.Speaker;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei.constants;
+package me.yoqi.android.xunfeitts.constants;
 
 /**
  * Created by ZhangQixiang on 2017/1/6.

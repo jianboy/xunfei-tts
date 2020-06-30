@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei;
+package me.yoqi.android.xunfeitts;
 
 import org.junit.Test;
 

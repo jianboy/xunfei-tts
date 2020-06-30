@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei.adapter;
+package me.yoqi.android.xunfeitts.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;

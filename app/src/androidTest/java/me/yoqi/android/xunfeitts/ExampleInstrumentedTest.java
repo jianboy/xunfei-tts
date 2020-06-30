@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei;
+package me.yoqi.android.xunfeitts;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

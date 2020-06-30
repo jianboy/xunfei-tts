@@ -1,4 +1,4 @@
-package com.zqx.kedaxunfei.activity;
+package me.yoqi.android.xunfeitts.activity;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -21,12 +21,13 @@ import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SynthesizerListener;
-import com.zqx.kedaxunfei.R;
-import com.zqx.kedaxunfei.adapter.SpeakerAdapter;
-import com.zqx.kedaxunfei.bean.Speaker;
-import com.zqx.kedaxunfei.constants.Keys;
-import com.zqx.kedaxunfei.utils.SpUtil;
-import com.zqx.kedaxunfei.view.BottomDialog;
+import com.yoqi.xunfeitts.R;
+
+import me.yoqi.android.xunfeitts.adapter.SpeakerAdapter;
+import me.yoqi.android.xunfeitts.constants.Keys;
+import me.yoqi.android.xunfeitts.utils.SpUtil;
+import me.yoqi.android.xunfeitts.view.BottomDialog;
+import me.yoqi.android.xunfeitts.bean.Speaker;
 
 import java.util.List;
 import java.util.Random;
